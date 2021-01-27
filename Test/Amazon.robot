@@ -33,7 +33,7 @@ User must sign in to check out
 
 Count amount of ads in search results
     [Documentation]    Count amount of ads in search result
-    [Tags]     Ads
+    [Tags]     Smoke    Ads
     Amazon.Web.Gui.Search for Products    ${SEARCH_TERM}
     Amazon.Web.Gui.Count results
 
@@ -41,7 +41,7 @@ Count amount of ads in search results
 #Dictionary testing (Should create seperate file for this, but it is just a small test)
 Open google sites via list
     [Documentation]    Testing googles sites via dictonary
-    [Tags]    Google
+    [Tags]    Google    List
     FOR    ${site}    IN    @{GOOGLE_URL_LIST}
             log  ${site}
             go to    ${site}
@@ -50,7 +50,7 @@ Open google sites via list
 
 Open googles sites via dictionary
     [Documentation]    Using dictionary in for loop
-    [Tags]    Google
+    [Tags]    Google    Loop
     @{sites} =    get dictionary values    ${GOOGLE_URL}
     FOR    ${site}    IN    @{sites}
             go to    ${site}
@@ -59,7 +59,7 @@ Open googles sites via dictionary
 # robot -i Google1 -v google_site:maps  -d results test/amazon.robot
 Open google site
     [Documentation]    Opening a google sites via dictionary & variable
-    [Tags]    Google1
+    [Tags]    Google    Dictionary
     go to    ${GOOGLE_URL.${GOOGLE_SITE}}
     sleep    1s
 
